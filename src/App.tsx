@@ -1,11 +1,12 @@
+import MainLayuot from "./components/MainLayout"
 
 function App() {
   
   return (
-    <>
-     <div>Candy Crush </div>
-    </>
+    <div className="w-full h-screen">
+     <MainLayuot/>
+    </div>
   )
 }
 
-export default App
+export default App;
