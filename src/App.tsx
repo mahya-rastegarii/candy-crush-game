@@ -1,11 +1,15 @@
-import MainLayuot from "./components/MainLayout"
+// import MainLayuot from "./components/MainLayout"
+import { RouterProvider } from "react-router-dom";
+import routers from "./routers";
 
 function App() {
+   
+
   
   return (
-    <div className="w-full h-screen">
-     <MainLayuot/>
-    </div>
+    <>
+    <RouterProvider router={routers}/>
+    </>
   )
 }
 

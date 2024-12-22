@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.titlePage{
+    -webkit-text-stroke: 2px #be123c;
+    text-shadow: 2px 4px #8b0c2c;
+}
