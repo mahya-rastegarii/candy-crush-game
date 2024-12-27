@@ -443,7 +443,7 @@ const dragEndHandler = () =>{
         {
          levelComplete && <div className=' fixed top-50 left-50  z-10 '>
           <div className='flex flex-col justify-center items-center space-y-7'>
-          <p className="nextLevelMessage  text-3xl  md:text-5xl  "> you Win</p>
+          <p className="nextLevelMessage  text-3xl  md:text-5xl  "> you Won</p>
            <button className='text-white bg-rose-900 flex justify-center items-center px-3 rounded-md py-2' onClick={resetGame}><GrPowerReset className=' mr-2'/>reset Game </button>
            </div>
           </div>
