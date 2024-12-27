@@ -2,8 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .titlePage{
     -webkit-text-stroke: 2px #be123c;
     text-shadow: 2px 4px #8b0c2c;
+    animation: fallFromTop 1s ease-in-out;
+}
+.animate-slide-up {
+    animation: slide-up 1s ease-out;
+  }
+  
+ 
+   
+.candyGrid.explode .candy {
+  animation: explode 1.5s ease-out forwards;
+}
+
+.nextLevelMessage {
+  color:gold;
+  text-shadow: 0 0 20px #ff0, 0 0 30px #ffa500;
+  animation: appear 2s ease-in-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    
+  }
+  100% {
+    opacity: 0;
+    
+  }
+ 
+}
+
+
+
+
+  
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fallFromTop {
+    0% {
+      transform: translateY(-100vh); 
+      opacity: 0; 
+    }
+    50% {
+      opacity: 1; 
+    }
+    100% {
+      transform: translateY(0); 
+    }
+  }
+  
+  
+
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(
+        calc((random() - 0.5) * 200px),
+        calc((random() - 0.5) * 200px)
+      )
+      scale(0);
+    opacity: 0;
+  }
 }
