@@ -284,7 +284,7 @@ const dragEndHandler = () =>{
      
       const candies = candyGridRef.current.children;
 
-      Array.from(candies).forEach((candy, index) => {
+      Array.from(candies).forEach((candy) => {
         const element = candy as HTMLDivElement;
         const randomX = (Math.random() - 0.5) * 200; 
         const randomY = (Math.random() - 0.5) * 200; 
