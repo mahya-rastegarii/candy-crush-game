@@ -375,13 +375,19 @@ const dragEndHandler = () =>{
     backgroundPosition: "center" }}
     >
      <PageBackdrop showMenu={showMenu} setShowMenu={setShowMenu}/>
-   <div className=" w-[600px] flex justify-around items-center space-x-5">
+   <div className=" w-full md:w-[600px] flex flex-col space-y-3 lg:flex-row justify-around items-center lg:space-x-5">
    
-     <div className='flex justify-center items-center cursor-pointer hover:text-rose-900' onClick={() => setShowMenu(true)}>
+   <div className=" w-full lg:w-fit flex justify-between"> 
+    <div className='flex justify-center items-center cursor-pointer hover:text-rose-900' onClick={() => setShowMenu(true)}>
      <GiHamburgerMenu className='inline text-xl ' />
-     <span className=' ml-1 font-bold'> Menu </span>
+     <span className=' ml-1  font-bold'> Menu </span>
      </div>
-    <div className="flex space-x-5">
+     <div className="flex lg:hidden">
+      <h5 className=" font-bold"> Score :{scoreGame}</h5>
+    </div>
+   </div>
+    
+    <div className="flex space-x-3 lg:space-x-5">
       <div className="flex ">
         <img src={redCandy} alt="" width={20} height={20} />
         <h5 className=" font-bold">{redCandyCount}\{candyCount.red < redCandyCount? candyCount.red : redCandyCount}</h5>
@@ -402,12 +408,12 @@ const dragEndHandler = () =>{
         <h5 className=" font-bold">{greenCandyCount}\{candyCount.green < greenCandyCount ? candyCount.green : greenCandyCount}</h5>
       </div>
     </div>
-    <div className="flex">
+    <div className="hidden lg:flex">
       <h5 className=" font-bold"> Score :{scoreGame}</h5>
     </div>
    
    </div>
-       <div className={` gameContainer w-[600px] h-[600px] relative flex justify-center items-center  flex-wrap backdrop-blur-lg ${levelComplete ? 'explode' : ''}`}>
+       <div className={` gameContainer w-full h-fit md:w-[600px] md:h-[600px] relative flex justify-center items-center  flex-wrap backdrop-blur-lg ${levelComplete ? 'explode' : ''}`}>
        <div ref={candyGridRef} className="candyGrid grid grid-cols-8 gap-1.5">
         {
           currentCandies.map( (candyColor, index) => (
@@ -437,7 +443,7 @@ const dragEndHandler = () =>{
         {
          levelComplete && <div className=' fixed top-50 left-50  z-10 '>
           <div className='flex flex-col justify-center items-center space-y-7'>
-          <p className="nextLevelMessage text-5xl  "> you Win</p>
+          <p className="nextLevelMessage  text-3xl  md:text-5xl  "> you Win</p>
            <button className='text-white bg-rose-900 flex justify-center items-center px-3 rounded-md py-2' onClick={resetGame}><GrPowerReset className=' mr-2'/>reset Game </button>
            </div>
           </div>

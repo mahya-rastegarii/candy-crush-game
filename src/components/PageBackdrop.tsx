@@ -1,8 +1,12 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 
+interface PageBackdropProps {
+  showMenu: boolean;
+  setShowMenu: (value: boolean) => void;
+}
 
-export default function PageBackdrop({showMenu, setShowMenu}) {
+const PageBackdrop:React.FC<PageBackdropProps> = ({showMenu, setShowMenu}) => {
 
  
   
@@ -13,3 +17,5 @@ export default function PageBackdrop({showMenu, setShowMenu}) {
     </div>
   )
 }
+
+export default PageBackdrop;
